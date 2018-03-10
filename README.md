@@ -61,4 +61,5 @@ Now you have all of your work, plus all of your teammate's approved work on one 
 ### Javascript
 * EVERY SINGE PAGE must include a JS loop of some kind 
 * Your team can only have 1 JS file - main.js
-* All your JS should be written in functions.  Wherever possible reuse functions.
+* All your JS should be written in functions.  Wherever possible reuseable functions.
+* At lease 1 of your pages should use a more complex data structure.  This means that one of your arrays should have an array inside each object.  For examle:  Each of your band members could have an array called favoriteSongs that has numbers in it that correspond to ids on your songs array.  To display the favorite songs you have to look the songs up by id.
