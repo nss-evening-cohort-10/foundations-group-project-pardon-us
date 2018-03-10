@@ -17,7 +17,6 @@ Each team member is going to be responsible for the content of a different page,
 
 1. Home page
 1. Band Members
-1. Band Mission
 1. Tour Schedule
 1. Album List
 1. Song List
