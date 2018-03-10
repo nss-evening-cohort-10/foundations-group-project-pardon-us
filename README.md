@@ -16,8 +16,9 @@ Your team can only have 1 CSS file - main.css
 Each team member is going to be responsible for the content of a different page, so decide on the name and content for each of those pages. Some possible options are...
 
 1. Home page
-1. Band Member
+1. Band Members
 1. Band Mission
+1. Tour Schedule
 1. Album List
 1. Song List
 
