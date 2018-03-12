@@ -10,7 +10,9 @@ Pick a theme that the team likes. A good place for inspiration is the [Wordpress
 
 Remeber this is a band website - there will be EXTRA BONUS points given to your team if you make your site look like a myspace page.
 
-Your team can only have 1 CSS file - main.css
+* Your team can only have 1 CSS file - main.css
+* Vanilla HTML, CSS, and JS only
+* Your team can not use any kind of framework (no bootstrap, materialize, etc).
 
 ### Pages
 Each team member is going to be responsible for the content of a different page, so decide on the name and content for each of those pages. Some possible options are...
