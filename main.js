@@ -32,7 +32,7 @@ console.log("hi from js!");
         {
             title: "Pardon Us Stink",
             year: 2019,
-            url: "https://f4.bcbits.com/img/a1656732168_10.jpg",
+            url: "https://f4.bcbits.com/img/a1656732168_16.jpg",
             tracks: ["Kicking and Screaming", "What Doesn't Kill Me", "Sphere", "Good For Me", "Shut Up and Die"]
         },
         {
@@ -44,43 +44,64 @@ console.log("hi from js!");
         {
             title: "Fumin'",
             year: 2016,
-            url: "https://f4.bcbits.com/img/a0706942430_10.jpg",
+            url: "https://f4.bcbits.com/img/a0706942430_16.jpg",
             tracks: ["Fumin'", "Aim Low (Mary Lou Lord cover)"]
         },
         {
-            title: "",
-            year: ,
-            url: "",
-            tracks: []
+            title: "Time Gentlemen Please",
+            year: 2015,
+            url: "https://f4.bcbits.com/img/a1673681289_16.jpg",
+            tracks: ["Time Gentlemen Please", "Home (Naked Raygun Cover)"]
         },
         {
-            title: "",
-            year: ,
-            url: "",
-            tracks: []
+            title: "Halloween Seventeen",
+            year: 2017,
+            url: "https://f4.bcbits.com/img/a2230950133_16.jpg",
+            tracks: ["Ghouls' Night Out (Misfits cover)", "Little Demons (Helen Chambers cover)"]
         },
         {
-            title: "",
-            year: ,
-            url: "",
-            tracks: []
+            title: "Demos 2014",
+            year: 2014,
+            url: "https://f4.bcbits.com/img/a3980155309_16.jpg",
+            tracks: ["Christina Demo", "FUD Demo", "Lost Weekend Demo", "Only Pain Demo"]
         },
         {
-            title: "",
-            year: ,
-            url: "",
-            tracks: []
-        },
-        {
-            title: "",
-            year: ,
-            url: "",
-            tracks: []
+            title: "Here's to the State",
+            year: 2017,
+            url: "https://f4.bcbits.com/img/a2951469965_16.jpg",
+            tracks: ["Here's to the State of Tory Britain", "Product (Business cover)"]
         }
-    ],
-    
+    ];
+        
+    // const expandBtn = document.getElementById('');
+    // const minimizeBtn = document.getElementById('');
+
     const printAlbums = (albumArray) => {
         //loop through albumArray and print title, year, and image to dom
+        console.log('print album');
+        let albumString = '';
+        for (let i = 0; i < albumArray.length; i++){
+            let albumObject = albumArray[i];
+            albumString += `
+                <div class="albumImage card text-center col-sm-8 offset-2" id="album${i}">
+                    <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
+                    <h3 class="albumTitle">${albumObject.title}</h3>
+                    <p class="albumYear">${albumObject.year}</p>
+                </div>
+            `
+        }
+        printToDom('mainDiv', albumString);
+    };
+
+    const chronologicalOrder = () => {
+        albumList.sort((first, last) => {
+                if(first.year < last.year){
+                    return 1
+                } else {
+                    return -1
+                }
+            }
+        );
     };
     
     const displayTracks = (e) => {
@@ -92,17 +113,16 @@ console.log("hi from js!");
         //function to expand image div and hide track list
         console.log('hide event', e)
     };
+
     
-    const expandBtn = document.getElementById('');
-    const minimizeBtn = document.getElementById('');
-    
-    expandBtn.addEventListener('click', displayTracks);
-    minimizeBtn.addEventListener('click', hideTracks);
-    
-    
-        // Init - All Pages
+    // expandBtn.addEventListener('click', displayTracks);
+    // minimizeBtn.addEventListener('click', hideTracks);
+ 
+
+ // Init - All Pages
     const init = () => {
         if (document.URL.includes('albums')){
+            chronologicalOrder();
             printAlbums(albumList);
         } else if (document.URL.includes('merch')) {
             // load merch				 
