@@ -2,3 +2,20 @@ body {
     background-color: #eac1c1;
 
 }
+
+.background {
+	background: radial-gradient(transparent, #EAC1C1) no-repeat center center fixed,
+                #eac1c1 url("https://images.unsplash.com/photo-1456725203480-0be828fcd7ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80") no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+	color: #EAC1C1;
+	margin: 0;
+	padding: 0;
+}
+
+.bodyDiv{
+    background-color: #49144980;
+    border-radius: 5px;
+	margin: 125px auto;
+	width: 80%
+}
