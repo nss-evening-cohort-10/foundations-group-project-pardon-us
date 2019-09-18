@@ -1,4 +1,3 @@
-console.log("hi from js!");
 
 //Print to DOM
     const printToDom = (divId, textToPrint) => {
@@ -128,25 +127,65 @@ const artistList = [
             tracks: ["Here's to the State of Tory Britain", "Product (Business cover)"]
         }
     ];
-        
-    // const expandBtn = document.getElementById('');
-    // const minimizeBtn = document.getElementById('');
+    
+    const displayAndHideTracks = (e) => {
+        const selectedBtn = e.target.id;
+        const seq = selectedBtn.split("-")[1];
+        const selectedTrackDiv = document.getElementById(`trackDiv${seq}`);
+        const selectedAlbumDiv = document.getElementById(`album${seq}`);
+        const trackArr = albumList[seq].tracks;
+
+        if(document.getElementById(selectedBtn).classList.contains('fa-caret-right')){
+            console.log(trackArr);
+            let trackString = '<ol>';
+            for(let i = 0; i < trackArr.length; i++){
+                trackString += `
+                    <li>${trackArr[i]}</li>                
+                `
+            };
+            trackString += '</ol>';
+            selectedAlbumDiv.classList.remove('col-7', 'offset-3');
+            selectedAlbumDiv.classList.add('col-sm-5');
+            selectedTrackDiv.classList.add('col-sm-3', 'col-5');
+            selectedTrackDiv.innerHTML = trackString;
+            document.getElementById(selectedBtn).classList.remove('fa-caret-right')
+            document.getElementById(selectedBtn).classList.add('fa-caret-left')
+        } else {
+            selectedAlbumDiv.classList.add('col-7', 'offset-3');
+            selectedAlbumDiv.classList.remove('col-sm-5');
+            selectedTrackDiv.classList.remove('col-sm-3', 'col-5');
+            selectedTrackDiv.innerHTML = '';
+            document.getElementById(selectedBtn).classList.remove('fa-caret-left')
+            document.getElementById(selectedBtn).classList.add('fa-caret-right')
+        }
+    };
+
+
 
     const printAlbums = (albumArray) => {
         //loop through albumArray and print title, year, and image to dom
-        console.log('print album');
         let albumString = '';
         for (let i = 0; i < albumArray.length; i++){
             let albumObject = albumArray[i];
             albumString += `
-                <div class="albumImage card text-center col-sm-8 offset-2" id="album${i}">
-                    <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
-                    <h3 class="albumTitle">${albumObject.title}</h3>
-                    <p class="albumYear">${albumObject.year}</p>
-                </div>
+                <div class="d-flex row">
+                    <div class="albumImage card text-center col-7 offset-3" id="album${[i]}">
+                        <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
+                        <h3 class="albumTitle">${albumObject.title}</h3>
+                        <p class="albumYear">${albumObject.year}</p>
+                    </div>
+                    <div class="tracks" id="trackDiv${[i]}"></div>
+                    <div class="col-2"><i class="fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
+                </div>      
             `
-        }
+        };
         printToDom('mainDiv', albumString);
+        for (let n = 0; n < albumArray.length; n++){
+            const targtExpandButton = document.getElementById(`toggleTracks-${n}`);
+            if (targtExpandButton){
+                targtExpandButton.addEventListener('click', displayAndHideTracks);
+            };
+        };
     };
 
     const chronologicalOrder = () => {
@@ -159,20 +198,7 @@ const artistList = [
             }
         );
     };
-    
-    const displayTracks = (e) => {
-        //function to reduce image div and add track list
-        console.log('display event', e)
-    };
-    
-    const hideTracks = (e) => {
-        //function to expand image div and hide track list
-        console.log('hide event', e)
-    };
 
-    
-    // expandBtn.addEventListener('click', displayTracks);
-    // minimizeBtn.addEventListener('click', hideTracks);
  
 
  // Init - All Pages
