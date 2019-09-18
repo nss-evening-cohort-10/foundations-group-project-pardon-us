@@ -87,6 +87,28 @@ i {
     font-size: 4em;
 }
 
+/* HOME PAGE */
+
+a,
+button {
+	background-color: transparent;
+	border: none;
+	color: #491449;
+}
+
+a:hover,
+button:hover {
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+button {
+	padding: 0;
+}
+
+.homeImg {
+	text-align: center;
+}	
 
 
 /* ABOUT PAGE */
