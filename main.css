@@ -11,7 +11,25 @@
 
 body {
     background-color: #eac1c1;
+	font-family: 'Quicksand', sans-serif;
+}
 
+.navbar-brand {
+	font-family: 'Great Vibes', cursive;
+	font-size: 50px;
+	margin-left: 10px;
+}
+
+.navbar {
+	background-color: transparent;
+}
+
+#navbarNav {
+	justify-content: flex-end;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+	background-color: transparent!important;
 }
 
  .background { /* About and Albums pages */
