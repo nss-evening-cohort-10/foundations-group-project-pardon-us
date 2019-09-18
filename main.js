@@ -78,15 +78,20 @@ console.log("hi from js!");
 
     const printAlbums = (albumArray) => {
         //loop through albumArray and print title, year, and image to dom
-        console.log('print album');
         let albumString = '';
         for (let i = 0; i < albumArray.length; i++){
             let albumObject = albumArray[i];
             albumString += `
-                <div class="albumImage card text-center col-sm-8 offset-2" id="album${i}">
-                    <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
-                    <h3 class="albumTitle">${albumObject.title}</h3>
-                    <p class="albumYear">${albumObject.year}</p>
+                <div class="d-flex">
+                    <div class="albumImage card text-center row col-sm-8 offset-2" id="album${i}">
+                        <div class="col-sm-10 offset-1">
+                        <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
+                        <h3 class="albumTitle">${albumObject.title}</h3>
+                        <p class="albumYear">${albumObject.year}</p>
+                        </div
+                        <div class="col-sm-1 rightArrowDiv"><i class="fas fa-caret-right"></i></div>
+                    </div>
+                    
                 </div>
             `
         }

@@ -1,3 +1,11 @@
+/* ALL */
+body {
+    background-color: #eac1c1;
+	font-family: 'Quicksand', sans-serif;
+}
+
+/* Album/Music Page */
+
 .albumCover {  
     border: 3px double #eac1c1;
     border-radius: 5px;
@@ -9,12 +17,12 @@
     margin: 2em auto;
 }
 
-body {
-    background-color: #eac1c1;
-	font-family: 'Quicksand', sans-serif;
+.rightArrowDiv {
+    align-content: center;
 }
 
 
+/* About and Albums pages */
 
 .background {
     background: radial-gradient(transparent, #EAC1C1) no-repeat center center fixed,
@@ -26,7 +34,7 @@ body {
     padding: 0;
 }
 
-.bodyDiv{ /* About and Albums pages */
+.bodyDiv{ 
     background-color: #49144980;
     border-radius: 5px;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
