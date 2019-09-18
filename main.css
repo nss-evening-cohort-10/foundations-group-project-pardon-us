@@ -103,6 +103,10 @@ button:hover {
 	text-decoration: underline;
 }
 
+button {
+	padding: 0;
+}
+
 
 /* ABOUT PAGE */
 .theBand {
