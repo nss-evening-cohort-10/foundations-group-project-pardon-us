@@ -1,3 +1,12 @@
+/* ALL */
+body {
+    background-color: #eac1c1;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+
+/* Album/Music Page */
+
 .albumCover {  
     border: 3px double #eac1c1;
     border-radius: 5px;
@@ -6,14 +15,23 @@
 .albumImage{
     background-color: transparent;
     border: none;
-    margin: 2em auto;
+    margin: 2em 1em 2em auto;
 }
 
-body {
-    background-color: #eac1c1;
-	font-family: 'Quicksand', sans-serif;
-	text-align: center;
+.fa-caret-right, .fa-caret-left{
+    color: #EAC1C1;
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
 }
+
+.tracks {
+    font-size: 1.25em;
+    padding: 2em 1em;
+}
+
+
+/* About and Albums pages */
 
 .background {
     background: radial-gradient(transparent, #EAC1C1) no-repeat center center fixed,
@@ -25,7 +43,7 @@ body {
     padding: 0;
 }
 
-.bodyDiv{ /* About and Albums pages */
+.bodyDiv{ 
     background-color: #49144980;
     border-radius: 5px;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
