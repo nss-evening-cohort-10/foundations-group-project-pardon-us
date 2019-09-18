@@ -88,14 +88,14 @@
                 `
             };
             trackString += '</ol>';
-            selectedAlbumDiv.classList.remove('col-8', 'offset-2');
+            selectedAlbumDiv.classList.remove('col-7', 'offset-3');
             selectedAlbumDiv.classList.add('col-sm-5');
             selectedTrackDiv.classList.add('col-sm-3', 'col-5');
             selectedTrackDiv.innerHTML = trackString;
             document.getElementById(selectedBtn).classList.remove('fa-caret-right')
             document.getElementById(selectedBtn).classList.add('fa-caret-left')
         } else {
-            selectedAlbumDiv.classList.add('col-8', 'offset-2');
+            selectedAlbumDiv.classList.add('col-7', 'offset-3');
             selectedAlbumDiv.classList.remove('col-sm-5');
             selectedTrackDiv.classList.remove('col-sm-3', 'col-5');
             selectedTrackDiv.innerHTML = '';
@@ -113,7 +113,7 @@
             let albumObject = albumArray[i];
             albumString += `
                 <div class="d-flex row">
-                    <div class="albumImage card text-center col-8 offset-2" id="album${[i]}">
+                    <div class="albumImage card text-center col-7 offset-3" id="album${[i]}">
                         <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
                         <h3 class="albumTitle">${albumObject.title}</h3>
                         <p class="albumYear">${albumObject.year}</p>
