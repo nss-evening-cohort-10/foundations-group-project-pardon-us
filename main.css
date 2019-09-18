@@ -15,7 +15,18 @@ body {
 	text-align: center;
 }
 
+a,
+button {
+	background-color: transparent;
+	border: none;
+	color: #491449;
+}
 
+a:hover,
+button:hover {
+	color: #0000FF;
+	text-decoration: underline;
+}
 
 .background {
     background: radial-gradient(transparent, #EAC1C1) no-repeat center center fixed,
