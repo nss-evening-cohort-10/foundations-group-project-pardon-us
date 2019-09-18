@@ -82,3 +82,68 @@ i {
 	margin: 50px;
 	font-size: 26px;
 }
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    
+
+}
+
+.card-container {
+    margin:10px;
+    width: 200px;
+    height: 300px;
+}
+
+.card {
+    width: 400px;
+    height: 300px;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    /* display: flex; */
+}
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+figure {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin:0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card .front {
+    background: #fff;
+}
+.card .front img {
+    width: 400px;
+    height: 300px;
+    
+}
+
+.card .back {
+    background-color: #000;
+    color: #fff;
+    transform: rotateY(180deg);
+    width: 400px;
+    height: 300px;
+}
+
+.front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
