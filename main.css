@@ -14,11 +14,14 @@ body {
 .albumImage {
     background-color: transparent;
     border: none;
-    margin: 2em auto;
+    margin: 2em 1em 2em auto;
 }
 
-.rightArrowDiv {
-    align-content: center;
+.fa-caret-right, .fa-caret-left{
+    color: #EAC1C1;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
 }
 
 
