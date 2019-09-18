@@ -13,27 +13,17 @@ body {
     padding: 0;
 }
 
-.body-div-container{
-    height: 100%;
-}
 
 .bodyDiv{
     background-color: #49144980;
     border-radius: 5px;
     width: 80%;
-};
+}
 
 /* Footer */
 
-.container {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
-    display: flex;
-  }
-  
 .footer {
-    background-color: #49144980;;
+    background-color: #49144980;
   }
 
 i {
