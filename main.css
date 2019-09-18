@@ -11,7 +11,7 @@ body {
     border-radius: 5px;
 }
 
-.albumImage {
+.albumImage{
     background-color: transparent;
     border: none;
     margin: 2em 1em 2em auto;
@@ -86,3 +86,14 @@ i {
     font-size: 4em;
 }
 
+
+
+/* ABOUT PAGE */
+.theBand {
+	margin: 10px;
+	font-size: 50px;
+}
+.aboutPara {
+	margin: 50px;
+	font-size: 26px;
+}
