@@ -3,7 +3,7 @@
     border-radius: 5px;
 }
 
-.albumImage {
+.albumImage{
     background-color: transparent;
     border: none;
     margin: 2em auto;
@@ -88,4 +88,15 @@ a:hover,
 button:hover {
 	color: #0000FF;
 	text-decoration: underline;
+}
+
+
+/* ABOUT PAGE */
+.theBand {
+	margin: 10px;
+	font-size: 50px;
+}
+.aboutPara {
+	margin: 50px;
+	font-size: 26px;
 }
