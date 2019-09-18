@@ -2,7 +2,6 @@
 body {
     background-color: #eac1c1;
 	font-family: 'Quicksand', sans-serif;
-	text-align: center;
 }
 
 /* Album/Music Page */
@@ -106,6 +105,10 @@ button:hover {
 button {
 	padding: 0;
 }
+
+.homeImg {
+	text-align: center;
+}	
 
 
 /* ABOUT PAGE */
