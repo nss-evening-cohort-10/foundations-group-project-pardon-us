@@ -19,9 +19,13 @@ body {
 
 .fa-caret-right, .fa-caret-left{
     color: #EAC1C1;
-    font-size: 2em;
+    font-size: 3em;
     position: absolute;
     top: 50%;
+}
+
+.tracks {
+    padding: 2em 1em;
 }
 
 

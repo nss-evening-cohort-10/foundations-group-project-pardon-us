@@ -72,17 +72,26 @@
         }
     ];
     
-    const displayAndHideTracks = (e, musicArr) => {
+    const displayAndHideTracks = (e) => {
         const selectedBtn = e.target.id;
         const seq = selectedBtn.split("-")[1];
         const selectedTrackDiv = document.getElementById(`trackDiv${seq}`);
         const selectedAlbumDiv = document.getElementById(`album${seq}`);
+        const trackArr = albumList[seq].tracks;
 
         if(document.getElementById(selectedBtn).classList.contains('fa-caret-right')){
+            console.log(trackArr);
+            let trackString = '<ol>';
+            for(let i = 0; i < trackArr.length; i++){
+                trackString += `
+                    <li>${trackArr[i]}</li>                
+                `
+            };
+            trackString += '</ol>';
             selectedAlbumDiv.classList.remove('col-8', 'offset-2');
             selectedAlbumDiv.classList.add('col-sm-5');
             selectedTrackDiv.classList.add('col-sm-3', 'col-5');
-            selectedTrackDiv.innerHTML = '<ol><li>track 1</li></ol>'
+            selectedTrackDiv.innerHTML = trackString;
             document.getElementById(selectedBtn).classList.remove('fa-caret-right')
             document.getElementById(selectedBtn).classList.add('fa-caret-left')
         } else {
@@ -109,7 +118,7 @@
                         <h3 class="albumTitle">${albumObject.title}</h3>
                         <p class="albumYear">${albumObject.year}</p>
                     </div>
-                    <div id="trackDiv${[i]}"></div>
+                    <div class="tracks" id="trackDiv${[i]}"></div>
                     <div class="col-2"><i class="fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
                 </div>      
             `
