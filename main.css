@@ -2,3 +2,13 @@ body {
     background-color: #eac1c1;
 
 }
+
+#vertical-nav {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    }
+
+.nav-item {
+    max-width: 20%;
+}
