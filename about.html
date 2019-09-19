@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pardon Us - About</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Pardon Us - About</title>
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Quicksand&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="dist/sweetalert.css">
     <script src="https://kit.fontawesome.com/4342cac95b.js"></script>
-
+</head>
 
 <body class="background d-flex flex-column h-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,29 +26,85 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./index.html">Home</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./about.html">About<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./merch.html">Merch</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./albums.html">Music</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./albums.html">Music<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="row h-100">
-        <div class="col-sm-10 offset-1 my-auto">
-            <div class="bodyDiv mx-auto">
-                <h1 class="theBand">The Band</h1>
-                <p class="aboutPara">Pardon us are a pop-punk band from Liverpool who formed in 2014. Some of their members have also played in Flamingo 50, the Down and Outs and Town Bike. They can be seen on the bills of DIY gigs, festivals and all-dayers around the UK, and are often compared to Jawbreaker, J Church and Off With Their Heads. Debut album coming soon.</p>
-            
+    <div class="row">
+        <div class="bodyDiv container col-sm-10 offset-2">
+            <h1 class="theBand">The Band</h1>
+            <p class="aboutPara">Pardon us are a pop-punk band from Liverpool who formed in 2014. Some of their members
+                have also played in Flamingo 50, the Down and Outs and Town Bike. They can be seen on the bills of DIY gigs, festivals and all-dayers around the UK, and are often compared to Jawbreaker, J Church and Off With Their Heads. Debut album coming soon.</p>
 
+
+            <div id="artistDiv" class="container d-flex justify-content-center"></div>
+
+            <!-- Book Us Form -->
+            <div class="container ">
+                <h3 class="text-center ml-1 ">Book Us</h3>
+                <p class="text-center">Trying to reach someone with Pardon Us? Please fill out the form below and click
+                    submit. We look forward to hearing from you!</p>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <!-- <label for="inputEmail4">Your Name</label> -->
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <!-- <label for="inputPassword4">Your Email</label> -->
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="inputAddress">Your Phone (optional)</label> -->
+                        <input type="number" class="form-control" placeholder="Your Phone (optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label for="inputZip">Message</label> -->
+                        <textarea class="form-control" name="contact" cols="30" rows="10" aria-label="Your message"
+                            placeholder="Your Message" required></textarea>
+                    </div>
+
+                    <!-- Modal -->
+
+                    <button id="valid" type="button" class="btn btn-block" data-toggle="modal"
+                        data-target="#exampleModal">Submit Message</button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title title" id="exampleModalLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    Your message has been successfully sent.
+                                  </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
+
+    <!-- Footer -->
 
     <footer class="footer mt-auto py-3">
         <div class="d-flex justify-content-end">
@@ -60,6 +116,8 @@
             <a href="https://www.pardonusband.com/"><i class="fab fa-spotify"></i></a>
         </div>
     </footer>
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

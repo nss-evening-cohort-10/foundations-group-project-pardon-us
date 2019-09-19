@@ -82,7 +82,8 @@ body {
     border-radius: 5px;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
     margin: 125px auto;
-    overflow: auto;
+    /* overflow: auto; */
+    padding: 20px;
 }
 
 /* Footer */
@@ -122,28 +123,90 @@ i {
     font-size: 4em;
 }
 
-/* HOME PAGE */
 
+/* merch page */
+#vertical-nav  {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    }
+
+.nav-link {
+    background-color: transparent!important;
+    border: none;    
+}    
+
+.nav-item {
+    max-width: 20%;
+}
+
+.card.merch {
+    background-color: transparent;
+    width: 30%;
+    /* margin: 5px; */
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+    border: transparent;
+    align-items: center;
+  }
+
+.card.merch img {
+    height: 275px;
+    width: 275px;
+    border-radius: 999em;
+	border: 10px solid #49144990;
+    box-shadow: 5px 5px 5px #49144940;
+  }
+
+  .card.merch h3 {
+      font-size: 25px;
+    }
+
+#merchandise {
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-flow: wrap;
+  }
+
+/* Home Page */
 a,
 button {
 	background-color: transparent;
 	border: none;
 	color: #491449;
+	opacity: 0.7;
 }
 
 a:hover,
 button:hover {
 	color: #0000FF;
+	opacity: 1.0;
 	text-decoration: underline;
 }
 
 button {
-	padding: 0;
+    padding: 0;
 }
 
 .homeImg {
 	text-align: center;
-}	
+}
+
+.tourCard {
+	background-color: #49144980;
+	color: #eac1c1;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px 0;
+	opacity: 0.7;
+}
+
+.time {
+	display: flex;
+	justify-content: flex-end;
+}
 
 
 /* ABOUT PAGE */
@@ -154,4 +217,68 @@ button {
 .aboutPara {
 	margin: 50px;
 	font-size: 26px;
+}
+
+#artistDiv{
+    /* width: 100%;
+    height: 100vh; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    /* flex-basis: auto; */
+    /* flex-flow: row wrap; */
+    padding: 50px 0px;
+  
+}
+
+.card-container{
+    width: 300px;
+    height: 300px; 
+    margin: 20px; 
+    transform-style: preserve-3d;
+}
+
+.artistCard{
+  width: 300px;
+  height: 300px;
+transition: transform 1s ease-in-out;
+/* transform-style: flat; */
+}
+
+.artistCard:hover {
+    transform:rotateY(180deg); 
+}
+
+.artistCard figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0px;
+
+    /* flex-direction: column; */
+}
+.front img{
+    width: 300px;
+    height: 300px;   
+}
+
+.back{
+    background-color: #EAC1C1;
+    color: #000;
+    transform:rotateY(180deg); 
+    text-align: center;
+}
+
+.links:hover{
+/* background-color: #491449; */
+color: #fff;
+}
+
+#valid{
+    background-color:#491449;
+    color: #EAC1C1;
+}
+.modal-title{
+    text-align: center;
 }
