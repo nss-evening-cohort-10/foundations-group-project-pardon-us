@@ -13,30 +13,41 @@
     <script src="https://kit.fontawesome.com/4342cac95b.js"></script>
 </head>
 
-<body class="h-100">
+<body class="d-flex flex-column h-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand active" href="./index.html">Pardon Us</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./merch.html">Merch</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./albums.html">Music</a>
-                </li>
-            </ul>
-        </div>
     </nav>
+
+    <div class="container homeImg d-flex">
+        <div class="row">
+            <div class="col-6">
+                <a href="./about.html">
+                    <img class="card-img-top" src=".\homeImg\amy-shamblen-pJ_DCj9KswI-unsplash.jpg" alt="about">
+                    About
+                </a>
+            </div>
+            <div class="col-6">
+                <a href="./merch.html">
+                    <img class="card-img-top" src=".\homeImg\icons8-team-7LNatQYMzm4-unsplash.jpg" alt="merch">
+                    Merch
+                </a> 
+            </div>
+            <div class="w-100"></div>
+            <div class="col-6">
+                <a href="./albums.html">
+                    <img class="card-img-top" src=".\homeImg\jason-leung-6rGJQry0_WI-unsplash.jpg" alt="albums">
+                    Music
+                </a>
+            </div>
+            <div class="col-6">
+                <button> <img class="card-img-top" src=".\homeImg\image.png" alt="">Upcoming Tour Dates</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer mt-auto py-3">
         <div class="d-flex justify-content-end">

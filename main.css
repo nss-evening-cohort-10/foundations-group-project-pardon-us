@@ -1,20 +1,36 @@
-.albumCover {  
-    border: 3px double #eac1c1;
-    border-radius: 5px;
-}
-
-.albumImage {
-    background-color: transparent;
-    border: none;
-    margin: 2em auto;
-}
-
+/* ALL */
 body {
     background-color: #eac1c1;
 	font-family: 'Quicksand', sans-serif;
 }
 
+/* Album/Music Page */
 
+.albumCover {  
+    border: 3px double #eac1c1;
+    border-radius: 5px;
+}
+
+.albumImage{
+    background-color: transparent;
+    border: none;
+    margin: 2em 1em 2em auto;
+}
+
+.fa-caret-right, .fa-caret-left{
+    color: #EAC1C1;
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+}
+
+.tracks {
+    font-size: 1.25em;
+    padding: 2em 1em;
+}
+
+
+/* About and Albums pages */
 
 .background {
     background: radial-gradient(transparent, #EAC1C1) no-repeat center center fixed,
@@ -26,7 +42,7 @@ body {
     padding: 0;
 }
 
-.bodyDiv{ /* About and Albums pages */
+.bodyDiv{ 
     background-color: #49144980;
     border-radius: 5px;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
@@ -70,6 +86,7 @@ i {
 .musicH1 {
     font-size: 4em;
 }
+
 
 /* merch page */
 #vertical-nav  {
@@ -116,3 +133,37 @@ i {
     display: flex;
     flex-flow: wrap;
   }
+
+
+a,
+button {
+	background-color: transparent;
+	border: none;
+	color: #491449;
+}
+
+a:hover,
+button:hover {
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+button {
+	padding: 0;
+}
+
+.homeImg {
+	text-align: center;
+}	
+
+
+/* ABOUT PAGE */
+.theBand {
+	margin: 10px;
+	font-size: 50px;
+}
+.aboutPara {
+	margin: 50px;
+	font-size: 26px;
+}
+
