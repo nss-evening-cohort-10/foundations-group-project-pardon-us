@@ -62,6 +62,35 @@ const artistList = [
 
     
 //Merch Page
+ //Merch Array of Objects
+const merchandise = [
+    {
+      title: "Metronome",
+      type: "Shirt",
+      price: "10",
+      imageUrl: "./Images/bKdUbXud_jpeg_1600x.jpg"
+    },
+    {
+      title: "Pardon",
+      type: "Shirt",
+      price: "10",
+      imageUrl:
+        "./Images/download.jpg"
+    },
+    {
+      title: "Ah! Shark",
+      type: "Shirt",
+      price: "10",
+      imageUrl: "./Images/0006187651_10.jpg"
+    },
+    {
+      title: "Fumin'",
+      type: "Poster",
+      price: "25",
+      imageUrl: "./Images/a0706942430_16.jpg"
+    },
+    ];
+
  
     
 // Music Page
