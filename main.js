@@ -173,10 +173,10 @@
     ]
 
     const printDates = (tourTimes) => {
-        let domString = '<div class="row">';
+        let tourString = '<div class="row">';
         for (let i=0; i < tourTimes.length; i++) {
             const singleDate = tourTimes[i];
-            domString += `
+            tourString += `
             <div class="col-sm-4">
                 <div class="card tourCard">
                     <div class="card-body">
@@ -188,8 +188,8 @@
             </div>
             `
         }
-        domString += '</div>';
-        printToDom('tourDates', domString);
+        tourString += '</div>';
+        printToDom('tourDates', tourString);
     }
 
     const datesClick = (e) => {
