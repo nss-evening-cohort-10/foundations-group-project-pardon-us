@@ -1,147 +1,68 @@
-const printToDom = (divId, textToPrint) => {
-  const selectedDiv = document.getElementById(divId);
-  selectedDiv.innerHTML = textToPrint;
-};
 
-
-
-
+//Print to DOM
+    const printToDom = (divId, textToPrint) => {
+        const selectedDiv = document.getElementById(divId);
+        selectedDiv.innerHTML = textToPrint;
+    };
     
 //Home Page
     
 
 //About Page
+const artistList = [
+    {
+        img: 'images/alex1.jpg',
+        name: 'Alex Howard',
+        description: 'Alex Howard is the founder, front man, and lead vocalist for the multi-platinum, Grammy Award-winning, UK rock group Pardon Us. In addition to being the founding member of Pardon and leading it through its overwhelming success, Brown is also credited as an impactful songwriter, producer.',
+    },
+    {
+        img: 'images/gabs.jpg',
+        name: 'Gabby Santos',
+        description: 'I was born on April 20th, 1978 (send cash, not presents) in Liverpool. Had a relatively simple, suburban upbringing. My interest in music was a little out of the ordinary for most 5 year olds. I was actually PLAYING guitar by 7. While everyone else was playing video games, I was practicing scale fingers.',
+    },
+    {
+        img: 'images/morgan3.jpeg',
+        name: 'Morgan Brown',
+        description: 'Music has been a part of my life as long as I can remember. While my parents didn’t play any instruments, they would always have music playing around the house and anytime we were in the car. The Police, Led Zeppelin, Paul Simon, The Beatles, Grateful Dead, Tom Petty and The Heartbreakers.',
+    }
+    ];
     
+    const printArtist = (artistArray) => {
+        let artistString = '';
+        for (let i = 0; i < artistArray.length; i++){
+            const artistObject = artistArray[i];
+            artistString += `
+            <div class="card-container card-group">
+                <div class="artistCard card">
+                    <figure class="front">
+                    <img src="${artistObject.img}" alt="${artistObject.name}">
+                    </figure>
+                    <figure class="back">
+                        <div>
+                            <h3>${artistObject.name}</h3>
+                            <p>${artistObject.description}</p>
+                        <div">
+                            <a href="https://www.facebook.com/wearepardonus"><i class="fab fa-facebook-f"></i></a> 
+                            <a href="https://twitter.com/pardonusband"><i class="fab fa-twitter"></i></a> 
+                            <a href="https://www.youtube.com/channel/UCTXl6wnNSkKOtCFqO-VWd9w"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/pardonusband/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.pardonusband.com/"><i class="fab fa-spotify"></i></a>
+                        </div>
+                        </div>   
+                    </figure>
+                </div>
+            </div>                  
+               `
+        }
+        printToDom('artistDiv', artistString);
+    };
+
+
+
+
     
 //Merch Page
- //Merch Array of Objects
-const merchandise = [
-    {
-      title: "Metronome",
-      type: "Shirt",
-      price: "10",
-      imageUrl: "./Images/bKdUbXud_jpeg_1600x.jpg"
-    },
-    {
-      title: "Pardon",
-      type: "Shirt",
-      price: "10",
-      imageUrl:
-        "./Images/download.jpg"
-    },
-    {
-      title: "Ah! Shark",
-      type: "Shirt",
-      price: "10",
-      imageUrl: "./Images/0006187651_10.jpg"
-    },
-    {
-      title: "Fumin'",
-      type: "Poster",
-      price: "25",
-      imageUrl: "./Images/a0706942430_16.jpg"
-    },
-    {
-      title: "Pardon Us",
-      type: "Poster",
-      price: "25",
-      imageUrl: "./Images/a1333370211_16 (1).jpg"
-    },
-    {
-      title: "Thersea May Not",
-      type: "Poster",
-      price: "25",
-      imageUrl: "./Images/a3168995921_16.jpg"
-    },
-    {
-      title: "Wait!",
-      type: "Vinyl",
-      price: "15",
-      imageUrl: "./Images/a0535589715_16.jpg"
-    },
-    {
-      title: "Demos",
-      type: "Vinyl",
-      price: "15",
-      imageUrl: "./Images/a3980155309_16.jpg"
-    },
-    {
-      title: "Pardon Us",
-      type: "Vinyl",
-      price: "15",
-      imageUrl: "./Images/a1333370211_16 (1).jpg"
-    }
-  ];
-  
-  //Merch Builder
-  const buildMerchandise = type => {
-    let domString = "";
-    merchandise.forEach(merch => {
-        if (merch.type === type){
-            domString += `<div class="card merch col--3">`;
-            domString += `<h3 class="title">${merch.title}</h3>`;
-            domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-            domString += `<strong>$${merch.price}</strong>`;
-            domString += `</div>`;
-        }
-        else if (type === "All"){
-          domString += `<div class="card merch col--3">`;
-          domString += `<h3 class="title">${merch.title}</h3>`;
-          domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-          domString += `<strong>$${merch.price}</strong>`;
-          domString += `</div>`;
-        }
-    });
-  
-    printToDom("merchandise", domString);
-  };
-  
-  //nav builder
-  const navBuilder = () => {
-    let domString = `<ul class="nav flex-column">
-          <li class="nav-item">
-              <input type="button" class="nav-link" id="posters" value="Posters">
-              </input>
-          </li>
-          <li class="nav-item">
-              <input type="button" class="nav-link" id="shirts" value="Shirts">
-              </input>
-          </li>
-          <li class="nav-item">
-              <input type="button" class="nav-link" id="vinyl" value="Vinyl">
-              </input>
-          </li>
-          <li class="nav-item">
-              <input type="button" class="nav-link" id="all" value="All">
-              </input>
-          </li>
-      </ul>`;
-  
-    printToDom("vertical-nav", domString);
-  };
-  
-  const eventListener = () => {
-      document .getElementById("posters").addEventListener("click", () => {
-          buildMerchandise("Poster");
-      });
-      document .getElementById("shirts").addEventListener("click", () => {
-          buildMerchandise("Shirt");
-      });
-      document .getElementById("vinyl").addEventListener("click", () => {
-          buildMerchandise("Vinyl");
-      });
-      document .getElementById("all").addEventListener("click", () => {
-          buildMerchandise("All");
-      });
-  }
-  
-//   const init = () => {
-//     // console.log(document.URL.indexOf("merch.html")!=-1);
-//     if (document.URL.indexOf("merch.html") != -1) {
-//       navBuilder();
-//       eventListener();
-//     }
-//   };
+ 
     
 // Music Page
     const albumList = [
@@ -280,16 +201,12 @@ const merchandise = [
             chronologicalOrder();
             printAlbums(albumList);
         } else if (document.URL.includes('merch')) {
-            // load merch	
-            navBuilder();
-            eventListener();
-            buildMerchandise("All");			 
+            // load merch				 
         } else if (document.URL.includes('about')) {
-            // band member cards				 
+            printArtist(artistList);				 
         } else {
             // hide tour dates				 
         }
     };
     
     init();
-
