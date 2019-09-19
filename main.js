@@ -131,14 +131,14 @@ const merchandise = [
             domString += `<div class="card merch col--3">`;
             domString += `<h3 class="title">${merch.title}</h3>`;
             domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-            domString += `<strong>$${merch.price}</strong>`;
+            domString += `$${merch.price}</strong>`;
             domString += `</div>`;
         }
         else if (type === "All"){
           domString += `<div class="card merch col--3">`;
           domString += `<h3 class="title">${merch.title}</h3>`;
           domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-          domString += `<strong>$${merch.price}</strong>`;
+          domString += `$${merch.price}</strong>`;
           domString += `</div>`;
         }
     });
@@ -352,22 +352,21 @@ const merchandise = [
     ]
 
     const printDates = (tourTimes) => {
-        let tourString = '<div class="row">';
+        let tourString = '<h3>Upcoming Shows</h3>';
         for (let i=0; i < tourTimes.length; i++) {
             const singleDate = tourTimes[i];
             tourString += `
-            <div class="col-sm-4">
-                <div class="card tourCard">
-                    <div class="card-body">
-                        <p>Date: ${singleDate.date}</p>
-                        <p>Location: ${singleDate.location}</p>
-                        <p>Time: ${singleDate.time}</p>
-                    </div>
-                </div>    
-            </div>
+            <div class="row tourCard">
+                <div class="col-10">
+                    <p>Date: ${singleDate.date}</p>
+                    <p>Location: ${singleDate.location}</p>
+                </div>
+                <div class="col-2">
+                    <p>Time: ${singleDate.time}</p>
+                </div>
+            </div>    
             `
         }
-        tourString += '</div>';
         printToDom('tourDates', tourString);
     }
 
