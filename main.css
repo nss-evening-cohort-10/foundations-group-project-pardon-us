@@ -108,7 +108,11 @@ button {
 
 .homeImg {
 	text-align: center;
-}	
+}
+
+.tourCard {
+	margin: 10px 0;
+}
 
 
 /* ABOUT PAGE */

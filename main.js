@@ -143,7 +143,67 @@
         );
     };
 
- 
+ // Upcoming Tour Dates
+    const upcomingTourDates = [
+        {
+            date: '20Oct2019',
+            location: 'Nashville',
+            time: '7:00 PM',
+        },
+        {
+            date: '22Nov2019',
+            location: 'Memphis',
+            time: '7:00 pm',
+        },
+        {
+            date: '09Dec2019',
+            location: 'Atlanta',
+            time: '7:00 PM',
+        },
+        {
+            date: '10Jan2020',
+            location: 'Boston',
+            time: '7:00 PM',
+        },
+        {
+            date: '20Feb2020',
+            location: 'Washington, DC',
+            time: '7:00 PM',
+        },
+    ]
+
+    const printDates = (tourTimes) => {
+        let domString = '<div class="row">';
+        for (let i=0; i < tourTimes.length; i++) {
+            const singleDate = tourTimes[i];
+            domString += `
+            <div class="col-sm-4">
+                <div class="card tourCard">
+                    <div class="card-body">
+                        <p>Date: ${singleDate.date}</p>
+                        <p>Location: ${singleDate.location}</p>
+                        <p>Time: ${singleDate.time}</p>
+                    </div>
+                </div>    
+            </div>
+            `
+        }
+        domString += '</div>';
+        printToDom('tourDates', domString);
+    }
+
+    const datesClick = (e) => {
+        const buttonID = e.target.id;
+        const displayDates = document.getElementById('tourDates');
+        if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'hidden') {
+            displayDates.style.visibility = 'visible'; 
+            return; 
+        } else if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'visible') {
+            displayDates.style.visibility = 'hidden';
+        }
+    }
+
+    
 
  // Init - All Pages
     const init = () => {
@@ -155,8 +215,13 @@
         } else if (document.URL.includes('about')) {
             // band member cards				 
         } else {
-            // hide tour dates				 
-        }
+            printDates(upcomingTourDates);
+            document.getElementById('tourDates').style.visibility = 'hidden';
+            document.getElementById('upcomingDates').addEventListener('click', datesClick);
+            // document.getElementById('upcomingTour').addEventListener('click', datesClick);	
+        }		 
+        
     };
     
     init();
+    
