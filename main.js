@@ -1,9 +1,11 @@
+const printToDom = (divId, textToPrint) => {
+  const selectedDiv = document.getElementById(divId);
+  selectedDiv.innerHTML = textToPrint;
+};
 
-//Print to DOM
-    const printToDom = (divId, textToPrint) => {
-        const selectedDiv = document.getElementById(divId);
-        selectedDiv.innerHTML = textToPrint;
-    };
+
+
+
     
 //Home Page
     
@@ -62,7 +64,134 @@ const artistList = [
 
     
 //Merch Page
- 
+ //Merch Array of Objects
+const merchandise = [
+    {
+      title: "Metronome",
+      type: "Shirt",
+      price: "10",
+      imageUrl: "./Images/bKdUbXud_jpeg_1600x.jpg"
+    },
+    {
+      title: "Pardon",
+      type: "Shirt",
+      price: "10",
+      imageUrl:
+        "./Images/download.jpg"
+    },
+    {
+      title: "Ah! Shark",
+      type: "Shirt",
+      price: "10",
+      imageUrl: "./Images/0006187651_10.jpg"
+    },
+    {
+      title: "Fumin'",
+      type: "Poster",
+      price: "25",
+      imageUrl: "./Images/a0706942430_16.jpg"
+    },
+    {
+      title: "Pardon Us",
+      type: "Poster",
+      price: "25",
+      imageUrl: "./Images/a1333370211_16 (1).jpg"
+    },
+    {
+      title: "Thersea May Not",
+      type: "Poster",
+      price: "25",
+      imageUrl: "./Images/a3168995921_16.jpg"
+    },
+    {
+      title: "Wait!",
+      type: "Vinyl",
+      price: "15",
+      imageUrl: "./Images/a0535589715_16.jpg"
+    },
+    {
+      title: "Demos",
+      type: "Vinyl",
+      price: "15",
+      imageUrl: "./Images/a3980155309_16.jpg"
+    },
+    {
+      title: "Pardon Us",
+      type: "Vinyl",
+      price: "15",
+      imageUrl: "./Images/a1333370211_16 (1).jpg"
+    }
+  ];
+  
+  //Merch Builder
+  const buildMerchandise = type => {
+    let domString = "";
+    merchandise.forEach(merch => {
+        if (merch.type === type){
+            domString += `<div class="card merch col--3">`;
+            domString += `<h3 class="title">${merch.title}</h3>`;
+            domString += `<h3><img src="${merch.imageUrl}"></h3>`;
+            domString += `<strong>$${merch.price}</strong>`;
+            domString += `</div>`;
+        }
+        else if (type === "All"){
+          domString += `<div class="card merch col--3">`;
+          domString += `<h3 class="title">${merch.title}</h3>`;
+          domString += `<h3><img src="${merch.imageUrl}"></h3>`;
+          domString += `<strong>$${merch.price}</strong>`;
+          domString += `</div>`;
+        }
+    });
+  
+    printToDom("merchandise", domString);
+  };
+  
+  //nav builder
+  const navBuilder = () => {
+    let domString = `<ul class="nav flex-column">
+          <li class="nav-item">
+              <input type="button" class="nav-link" id="posters" value="Posters">
+              </input>
+          </li>
+          <li class="nav-item">
+              <input type="button" class="nav-link" id="shirts" value="Shirts">
+              </input>
+          </li>
+          <li class="nav-item">
+              <input type="button" class="nav-link" id="vinyl" value="Vinyl">
+              </input>
+          </li>
+          <li class="nav-item">
+              <input type="button" class="nav-link" id="all" value="All">
+              </input>
+          </li>
+      </ul>`;
+  
+    printToDom("vertical-nav", domString);
+  };
+  
+  const eventListener = () => {
+      document .getElementById("posters").addEventListener("click", () => {
+          buildMerchandise("Poster");
+      });
+      document .getElementById("shirts").addEventListener("click", () => {
+          buildMerchandise("Shirt");
+      });
+      document .getElementById("vinyl").addEventListener("click", () => {
+          buildMerchandise("Vinyl");
+      });
+      document .getElementById("all").addEventListener("click", () => {
+          buildMerchandise("All");
+      });
+  }
+  
+//   const init = () => {
+//     // console.log(document.URL.indexOf("merch.html")!=-1);
+//     if (document.URL.indexOf("merch.html") != -1) {
+//       navBuilder();
+//       eventListener();
+//     }
+//   };
     
 // Music Page
     const albumList = [
@@ -201,7 +330,10 @@ const artistList = [
             chronologicalOrder();
             printAlbums(albumList);
         } else if (document.URL.includes('merch')) {
-            // load merch				 
+            // load merch	
+            navBuilder();
+            eventListener();
+            buildMerchandise("All");			 
         } else if (document.URL.includes('about')) {
             printArtist(artistList);				 
         } else {
@@ -210,3 +342,4 @@ const artistList = [
     };
     
     init();
+

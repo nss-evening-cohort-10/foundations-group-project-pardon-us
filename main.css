@@ -87,7 +87,53 @@ i {
     font-size: 4em;
 }
 
-/* HOME PAGE */
+
+/* merch page */
+#vertical-nav  {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    }
+
+.nav-link {
+    background-color: transparent!important;
+    border: none;    
+}    
+
+.nav-item {
+    max-width: 20%;
+}
+
+.card.merch {
+    background-color: transparent;
+    width: 30%;
+    /* margin: 5px; */
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+    border: transparent;
+    align-items: center;
+  }
+
+.card.merch img {
+    height: 275px;
+    width: 275px;
+    border-radius: 999em;
+	border: 10px solid #49144990;
+    box-shadow: 5px 5px 5px #49144940;
+  }
+
+  .card.merch h3 {
+      font-size: 25px;
+    }
+
+#merchandise {
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-flow: wrap;
+  }
+
 
 a,
 button {
