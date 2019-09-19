@@ -131,14 +131,14 @@ const merchandise = [
             domString += `<div class="card merch col--3">`;
             domString += `<h3 class="title">${merch.title}</h3>`;
             domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-            domString += `<strong>$${merch.price}</strong>`;
+            domString += `$${merch.price}</strong>`;
             domString += `</div>`;
         }
         else if (type === "All"){
           domString += `<div class="card merch col--3">`;
           domString += `<h3 class="title">${merch.title}</h3>`;
           domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-          domString += `<strong>$${merch.price}</strong>`;
+          domString += `$${merch.price}</strong>`;
           domString += `</div>`;
         }
     });
@@ -322,7 +322,66 @@ const merchandise = [
         );
     };
 
- 
+ // Upcoming Tour Dates
+    const upcomingTourDates = [
+        {
+            date: '20Oct2019',
+            location: 'Nashville',
+            time: '7:00 PM',
+        },
+        {
+            date: '22Nov2019',
+            location: 'Memphis',
+            time: '7:00 pm',
+        },
+        {
+            date: '09Dec2019',
+            location: 'Atlanta',
+            time: '7:00 PM',
+        },
+        {
+            date: '10Jan2020',
+            location: 'Boston',
+            time: '7:00 PM',
+        },
+        {
+            date: '20Feb2020',
+            location: 'Washington, DC',
+            time: '7:00 PM',
+        },
+    ]
+
+    const printDates = (tourTimes) => {
+        let tourString = '<h3>Upcoming Shows</h3>';
+        for (let i=0; i < tourTimes.length; i++) {
+            const singleDate = tourTimes[i];
+            tourString += `
+            <div class="row tourCard">
+                <div class="col-10">
+                    <p>Date: ${singleDate.date}</p>
+                    <p>Location: ${singleDate.location}</p>
+                </div>
+                <div class="col-2">
+                    <p>Time: ${singleDate.time}</p>
+                </div>
+            </div>    
+            `
+        }
+        printToDom('tourDates', tourString);
+    }
+
+    const datesClick = (e) => {
+        const buttonID = e.target.id;
+        const displayDates = document.getElementById('tourDates');
+        if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'hidden') {
+            displayDates.style.visibility = 'visible'; 
+            return; 
+        } else if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'visible') {
+            displayDates.style.visibility = 'hidden';
+        }
+    }
+
+    
 
  // Init - All Pages
     const init = () => {
@@ -337,9 +396,12 @@ const merchandise = [
         } else if (document.URL.includes('about')) {
             printArtist(artistList);				 
         } else {
-            // hide tour dates				 
-        }
+            printDates(upcomingTourDates);
+            document.getElementById('tourDates').style.visibility = 'hidden';
+            document.getElementById('upcomingDates').addEventListener('click', datesClick);
+            // document.getElementById('upcomingTour').addEventListener('click', datesClick);	
+        }		 
+        
     };
     
     init();
-

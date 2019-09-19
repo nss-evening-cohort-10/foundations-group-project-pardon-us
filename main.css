@@ -134,17 +134,19 @@ i {
     flex-flow: wrap;
   }
 
-
+/* Home Page */
 a,
 button {
 	background-color: transparent;
 	border: none;
 	color: #491449;
+	opacity: 0.7;
 }
 
 a:hover,
 button:hover {
 	color: #0000FF;
+	opacity: 1.0;
 	text-decoration: underline;
 }
 
@@ -154,7 +156,21 @@ button {
 
 .homeImg {
 	text-align: center;
-}	
+}
+
+.tourCard {
+	background-color: #49144980;
+	color: #eac1c1;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px 0;
+	opacity: 0.7;
+}
+
+.time {
+	display: flex;
+	justify-content: flex-end;
+}
 
 
 /* ABOUT PAGE */
