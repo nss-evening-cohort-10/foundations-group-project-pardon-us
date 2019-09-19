@@ -1,14 +1,118 @@
-body {
-    background-color: #eac1c1;
-
+.albumCover {  
+    border: 3px double #eac1c1;
+    border-radius: 5px;
 }
 
-#vertical-nav {
+.albumImage {
+    background-color: transparent;
+    border: none;
+    margin: 2em auto;
+}
+
+body {
+    background-color: #eac1c1;
+	font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.background {
+    background: radial-gradient(transparent, #EAC1C1) no-repeat center center fixed,
+                #eac1c1 url("https://images.unsplash.com/photo-1456725203480-0be828fcd7ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    color: #EAC1C1;
+    margin: 0;
+    padding: 0;
+}
+
+.bodyDiv{ /* About and Albums pages */
+    background-color: #49144980;
+    border-radius: 5px;
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+    margin: 125px auto;
+    overflow: auto;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #49144980;
+  }
+
+i {
+      color:#000;
+      margin: 10px;
+  }
+
+
+/* Navbar */
+
+.navbar-brand {
+	font-family: 'Great Vibes', cursive;
+	font-size: 50px;
+	margin-left: 10px;
+}
+
+.navbar {
+	background-color: transparent;
+}
+
+#navbarNav {
+	justify-content: flex-end;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+	background-color: transparent!important;
+}
+
+
+.musicH1 {
+    font-size: 4em;
+}
+
+/* merch page */
+#vertical-nav  {
     display: flex;
     align-items: center;
     height: 100vh;
     }
 
+.nav-link {
+    background-color: transparent!important;
+    border: none;    
+}    
+
 .nav-item {
     max-width: 20%;
 }
+
+.card.merch {
+    background-color: transparent;
+    width: 30%;
+    /* margin: 5px; */
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+    border: transparent;
+    align-items: center;
+  }
+
+.card.merch img {
+    height: 275px;
+    width: 275px;
+    border-radius: 999em;
+	border: 10px solid #49144990;
+    box-shadow: 5px 5px 5px #49144940;
+  }
+
+  .card.merch h3 {
+      font-size: 25px;
+    }
+
+#merchandise {
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-flow: wrap;
+  }
