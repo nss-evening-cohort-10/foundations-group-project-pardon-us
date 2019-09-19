@@ -60,7 +60,9 @@ const printToDom = (divId, textToPrint) => {
       };
 
   
+     
       
+
   //Merch Page
    //Merch Array of Objects
   const merchandise = [
@@ -136,14 +138,14 @@ const printToDom = (divId, textToPrint) => {
             domString += `<div class="card merch col--3">`;
             domString += `<h3 class="title">${merch.title}</h3>`;
             domString += `<h3><img src="${merch.imageUrl}"></h3>`;
-            domString += `<strong>$${merch.price}</strong>`;
+            domString += `$${merch.price}</strong>`;
             domString += `</div>`;
-          }
-      });
-    
-      printToDom("merchandise", domString);
-    };
-    
+          } 
+    });
+  
+    printToDom("merchandise", domString);
+  };
+  
     //nav builder
     const navBuilder = () => {
       let domString = `<ul class="nav flex-column">
@@ -281,62 +283,124 @@ const printToDom = (divId, textToPrint) => {
           }
       };
   
-  
-  
-      const printAlbums = (albumArray) => {
-          //loop through albumArray and print title, year, and image to dom
-          let albumString = '';
-          for (let i = 0; i < albumArray.length; i++){
-              let albumObject = albumArray[i];
-              albumString += `
-                  <div class="d-flex row">
-                      <div class="albumImage card text-center col-7 offset-3" id="album${[i]}">
-                          <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
-                          <h3 class="albumTitle">${albumObject.title}</h3>
-                          <p class="albumYear">${albumObject.year}</p>
-                      </div>
-                      <div class="tracks" id="trackDiv${[i]}"></div>
-                      <div class="col-2"><i class="fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
-                  </div>      
-              `
-          };
-          printToDom('mainDiv', albumString);
-          for (let n = 0; n < albumArray.length; n++){
-              const targtExpandButton = document.getElementById(`toggleTracks-${n}`);
-              if (targtExpandButton){
-                  targtExpandButton.addEventListener('click', displayAndHideTracks);
-              };
-          };
-      };
-  
-      const chronologicalOrder = () => {
-          albumList.sort((first, last) => {
-                  if(first.year < last.year){
-                      return 1
-                  } else {
-                      return -1
-                  }
-              }
-          );
-      };
-  
-   
-  
-   // Init - All Pages
-      const init = () => {
-          if (document.URL.includes('albums')){
-              chronologicalOrder();
-              printAlbums(albumList);
-          } else if (document.URL.includes('merch')) {
-              // load merch	
-              navBuilder();
-              eventListener();
-              buildMerchandise("All");			 
-          } else if (document.URL.includes('about')) {
-              printArtist(artistList);				 
-          } else {
-              // hide tour dates				 
-          }
-      };
-      
-      init();
+  const printAlbums = (albumArray) => {
+        //loop through albumArray and print title, year, and image to dom
+        let albumString = '';
+        for (let i = 0; i < albumArray.length; i++){
+            let albumObject = albumArray[i];
+            albumString += `
+                <div class="d-flex row">
+                    <div class="albumImage card text-center col-7 offset-3" id="album${[i]}">
+                        <img class="albumCover card-img-top" src=${albumObject.url} alt=${albumObject.title} />
+                        <h3 class="albumTitle">${albumObject.title}</h3>
+                        <p class="albumYear">${albumObject.year}</p>
+                    </div>
+                    <div class="tracks" id="trackDiv${[i]}"></div>
+                    <div class="col-2"><i class="fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
+                </div>      
+            `
+        };
+        printToDom('mainDiv', albumString);
+        for (let n = 0; n < albumArray.length; n++){
+            const targtExpandButton = document.getElementById(`toggleTracks-${n}`);
+            if (targtExpandButton){
+                targtExpandButton.addEventListener('click', displayAndHideTracks);
+            };
+        };
+    };
+
+    const chronologicalOrder = () => {
+        albumList.sort((first, last) => {
+                if(first.year < last.year){
+                    return 1
+                } else {
+                    return -1
+                }
+            }
+        );
+    };
+
+ // Upcoming Tour Dates
+    const upcomingTourDates = [
+        {
+            date: '20Oct2019',
+            location: 'Nashville',
+            time: '7:00 PM',
+        },
+        {
+            date: '22Nov2019',
+            location: 'Memphis',
+            time: '7:00 pm',
+        },
+        {
+            date: '09Dec2019',
+            location: 'Atlanta',
+            time: '7:00 PM',
+        },
+        {
+            date: '10Jan2020',
+            location: 'Boston',
+            time: '7:00 PM',
+        },
+        {
+            date: '20Feb2020',
+            location: 'Washington, DC',
+            time: '7:00 PM',
+        },
+    ]
+
+    const printDates = (tourTimes) => {
+        let tourString = '<h3>Upcoming Shows</h3>';
+        for (let i=0; i < tourTimes.length; i++) {
+            const singleDate = tourTimes[i];
+            tourString += `
+            <div class="row tourCard">
+                <div class="col-10">
+                    <p>Date: ${singleDate.date}</p>
+                    <p>Location: ${singleDate.location}</p>
+                </div>
+                <div class="col-2">
+                    <p>Time: ${singleDate.time}</p>
+                </div>
+            </div>    
+            `
+        }
+        printToDom('tourDates', tourString);
+    }
+
+    const datesClick = (e) => {
+        const buttonID = e.target.id;
+        const displayDates = document.getElementById('tourDates');
+        if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'hidden') {
+            displayDates.style.visibility = 'visible'; 
+            return; 
+        } else if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'visible') {
+            displayDates.style.visibility = 'hidden';
+        }
+    }
+
+    
+
+ // Init - All Pages
+    const init = () => {
+        if (document.URL.includes('albums')){
+            chronologicalOrder();
+            printAlbums(albumList);
+        } else if (document.URL.includes('merch')) {
+            // load merch	
+            navBuilder();
+            eventListener();
+            buildMerchandise("All");			 
+        } else if (document.URL.includes('about')) {
+            printArtist(artistList);				 
+        } else {
+            printDates(upcomingTourDates);
+            document.getElementById('tourDates').style.visibility = 'hidden';
+            document.getElementById('upcomingDates').addEventListener('click', datesClick);
+            // document.getElementById('upcomingTour').addEventListener('click', datesClick);	
+        }		 
+        
+    };
+    
+    init();
+
