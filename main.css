@@ -20,11 +20,11 @@ body {
 }
 
 .albumImage.col-7{
-    transform: translateX(0);  
+    transform: translateX(10px);  
 }
 
 .albumImage.col-sm-5{
-    transform: translateX(-700);  
+    transform: translateX(-10);  
 }
 .caretIcon{
     transform: rotateY(0);
@@ -45,7 +45,7 @@ body {
 }
 
 .tracks.no-column{
-    transform: translateX(100px); 
+    transform: translateX(150px); 
 }
 
 .tracks.col-sm-3{
