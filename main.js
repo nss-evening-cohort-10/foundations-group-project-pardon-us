@@ -13,24 +13,17 @@ const artistList = [
     {
         img: 'images/alex1.jpg',
         name: 'Alex Howard',
-        description: 'Alex Howard is the founder, front man, and lead vocalist for the multi-platinum, Grammy Award-winning, UK rock group Pardon Us. In addition to being the founding member of Pardon and leading it through its overwhelming success, Brown is also credited as an impactful songwriter, producer, and philanthropist.',
-        socialSites: ['<a href="#"><i class="fab fa-facebook-f"></i></a>', '<a href="#"><i class="fab fa-twitter"></i></a>', '<a href="#"><i class="fab fa-youtube"></i></a>', '<a href="#"><i class="fab fa-instagram"></i></a>', '<a href="#"><i class="fab fa-spotify"></i></a>'],
+        description: 'Alex Howard is the founder, front man, and lead vocalist for the multi-platinum, Grammy Award-winning, UK rock group Pardon Us. In addition to being the founding member of Pardon and leading it through its overwhelming success, Brown is also credited as an impactful songwriter, producer.',
     },
     {
         img: 'images/gabs.jpg',
         name: 'Gabby Santos',
-        description: 'I was born on April 20th, 1978 (send cash, not presents) in Liverpool. Had a relatively simple, suburban upbringing. My interest in music was a little out of the ordinary for most 5 year olds. I was actually PLAYING guitar by 7. While everyone else was playing video games, I was practicing scale fingers & chord changes. I am still good at Tecmo Bowl though.',
-        socialSites: ['<a href="#"><i class="fab fa-facebook-f"></i></a>', '<a href="#"><i class="fab fa-twitter"></i></a>', '<a href="#"><i class="fab fa-youtube"></i></a>', '<a href="#"><i class="fab fa-instagram"></i></a>', '<a href="#"><i class="fab fa-spotify"></i></a>'],
+        description: 'I was born on April 20th, 1978 (send cash, not presents) in Liverpool. Had a relatively simple, suburban upbringing. My interest in music was a little out of the ordinary for most 5 year olds. I was actually PLAYING guitar by 7. While everyone else was playing video games, I was practicing scale fingers.',
     },
     {
         img: 'images/morgan3.jpeg',
         name: 'Morgan Brown',
-        description: 'Music has been a part of my life as long as I can remember. While my parents didn’t play any instruments, they would always have music playing around the house and anytime we were in the car. The Police, Led Zeppelin, Paul Simon, The Beatles, Grateful Dead, Tom Petty and The Heartbreakers, and many more were all shaping my musical taste from an early age.',
-        // socialSites: [`<a href="#"><i class="fab fa-facebook-f"></i></a> 
-        // <a href="#"><i class="fab fa-twitter"></i></a> 
-        // <a href="#"><i class="fab fa-youtube"></i></a>
-        // <a href="#"><i class="fab fa-instagram"></i></a>
-        // <a href="#"><i class="fab fa-spotify"></i></a>`]
+        description: 'Music has been a part of my life as long as I can remember. While my parents didn’t play any instruments, they would always have music playing around the house and anytime we were in the car. The Police, Led Zeppelin, Paul Simon, The Beatles, Grateful Dead, Tom Petty and The Heartbreakers.',
     }
     ];
     
@@ -39,32 +32,33 @@ const artistList = [
         for (let i = 0; i < artistArray.length; i++){
             const artistObject = artistArray[i];
             artistString += `
-            <div class="card-container">
-                <div class="card">
+            <div class="card-container card-group">
+                <div class="artistCard card">
                     <figure class="front">
                     <img src="${artistObject.img}" alt="${artistObject.name}">
                     </figure>
                     <figure class="back">
                         <div>
                             <h3>${artistObject.name}</h3>
-                            <div class="description">
-                            ${artistObject.description}
-                        </div>
-                        <div class="d-flex justify-content-center">
+                            <p>${artistObject.description}</p>
+                        <div">
                             <a href="https://www.facebook.com/wearepardonus"><i class="fab fa-facebook-f"></i></a> 
-                            <a href="#"><i class="fab fa-twitter"></i></a> 
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-spotify"></i></a>
-                        </div>    
+                            <a href="https://twitter.com/pardonusband"><i class="fab fa-twitter"></i></a> 
+                            <a href="https://www.youtube.com/channel/UCTXl6wnNSkKOtCFqO-VWd9w"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/pardonusband/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.pardonusband.com/"><i class="fab fa-spotify"></i></a>
+                        </div>
+                        </div>   
                     </figure>
-                </div>
                 </div>
             </div>                  
                `
         }
         printToDom('artistDiv', artistString);
     };
+
+
+
 
     
 //Merch Page

@@ -47,7 +47,7 @@ body {
     border-radius: 5px;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
     margin: 125px auto;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 /* Footer */
@@ -121,67 +121,57 @@ button {
 	font-size: 26px;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
+#artistDiv{
+    /* width: 100%;
+    height: 100vh; */
     display: flex;
     justify-content: center;
-    align-content: center;
-
-
+    flex-wrap: wrap;
+    align-items: center;
+    /* flex-basis: auto; */
+    /* flex-flow: row wrap; */
   
-    
-
 }
 
-.card-container {
-    /* margin:10px; */
-    width: 350px;
-    height: 350px;
-}
-
-.card {
-    width: 350px;
-    height: 350px;
-    transition: transform 1s ease-in-out;
+.card-container{
+    width: 300px;
+    height: 300px; 
+    margin: 20px; 
     transform-style: preserve-3d;
 }
-.card-container:hover .card {
-    transform: rotateY(180deg);
+
+.artistCard{
+  width: 300px;
+  height: 300px;
+transition: transform 1s ease-in-out;
+/* transform-style: flat; */
 }
 
-figure {
-    width: 100%;
-    height: 100%;
-    /* position: absolute; */
-    /* margin:0; */
-    border-radius: 5px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
+.artistCard:hover {
+    transform:rotateY(180deg); 
 }
 
-.card .front {
-    /* background: #fff; */
-}
-.card .front img {
-    width: 350px;
-    height: 350px;
-    
-}
-
-.card .back {
-    background-color: #49144980;
-    color: #fff;
-    transform: rotateY(180deg);
-    width: 350px;
-    height: 350px;
-}
-
-.front {
+.artistCard figure{
     width: 100%;
     height: 100%;
     position: absolute;
+    margin: 0px;
+
+    /* flex-direction: column; */
+}
+.front img{
+    width: 300px;
+    height: 300px;   
 }
 
+.back{
+    background-color: #EAC1C1;
+    color: #000;
+    transform:rotateY(180deg); 
+    text-align: center;
+}
+
+.links:hover{
+/* background-color: #491449; */
+color: #fff;
+}
