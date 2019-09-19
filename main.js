@@ -80,7 +80,6 @@
         const trackArr = albumList[seq].tracks;
 
         if(document.getElementById(selectedBtn).classList.contains('fa-caret-right')){
-            console.log(trackArr);
             let trackString = '<ol>';
             for(let i = 0; i < trackArr.length; i++){
                 trackString += `
@@ -121,7 +120,7 @@
                         <p class="albumYear">${albumObject.year}</p>
                     </div>
                     <div class="tracks no-column" id="trackDiv${[i]}"></div>
-                    <div class="col-2"><i class="fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
+                    <div class="col-2"><i class="caretIcon fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
                 </div>      
             `
         };

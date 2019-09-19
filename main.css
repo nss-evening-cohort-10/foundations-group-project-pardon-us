@@ -26,6 +26,18 @@ body {
 .albumImage.col-sm-5{
     transform: translateX(-700);  
 }
+.caretIcon{
+    transform: rotateY(0);
+    transition: transform 800ms ease;
+}
+
+.caretIcon.fa-caret-right{
+    transform: rotateY(0);
+}
+
+.caretIcon.fa-caret-left{
+    transform: rotateY(360deg);
+}
 
 .tracks{
     transform: translateX(0);
