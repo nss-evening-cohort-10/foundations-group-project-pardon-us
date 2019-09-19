@@ -48,6 +48,7 @@ body {
     font-family: 'Quicksand', 'Open Sans', sans-serif;
     margin: 125px auto;
     /* overflow: auto; */
+    padding: 20px;
 }
 
 /* Footer */
@@ -151,7 +152,7 @@ button:hover {
 }
 
 button {
-	padding: 0;
+    padding: 0;
 }
 
 .homeImg {
@@ -192,6 +193,7 @@ button {
     align-items: center;
     /* flex-basis: auto; */
     /* flex-flow: row wrap; */
+    padding: 50px 0px;
   
 }
 
@@ -236,4 +238,12 @@ transition: transform 1s ease-in-out;
 .links:hover{
 /* background-color: #491449; */
 color: #fff;
+}
+
+#valid{
+    background-color:#491449;
+    color: #EAC1C1;
+}
+.modal-title{
+    text-align: center;
 }
