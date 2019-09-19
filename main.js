@@ -91,6 +91,7 @@
             selectedAlbumDiv.classList.remove('col-7', 'offset-3');
             selectedAlbumDiv.classList.add('col-sm-5');
             selectedTrackDiv.classList.add('col-sm-3', 'col-5');
+            selectedTrackDiv.classList.remove('no-column');
             selectedTrackDiv.innerHTML = trackString;
             document.getElementById(selectedBtn).classList.remove('fa-caret-right')
             document.getElementById(selectedBtn).classList.add('fa-caret-left')
@@ -98,6 +99,7 @@
             selectedAlbumDiv.classList.add('col-7', 'offset-3');
             selectedAlbumDiv.classList.remove('col-sm-5');
             selectedTrackDiv.classList.remove('col-sm-3', 'col-5');
+            selectedTrackDiv.classList.add('no-column');
             selectedTrackDiv.innerHTML = '';
             document.getElementById(selectedBtn).classList.remove('fa-caret-left')
             document.getElementById(selectedBtn).classList.add('fa-caret-right')
@@ -118,7 +120,7 @@
                         <h3 class="albumTitle">${albumObject.title}</h3>
                         <p class="albumYear">${albumObject.year}</p>
                     </div>
-                    <div class="tracks" id="trackDiv${[i]}"></div>
+                    <div class="tracks no-column" id="trackDiv${[i]}"></div>
                     <div class="col-2"><i class="fas fa-caret-right" id="toggleTracks-${[i]}"></i></div> 
                 </div>      
             `

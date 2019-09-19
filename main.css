@@ -15,6 +15,29 @@ body {
     background-color: transparent;
     border: none;
     margin: 2em 1em 2em auto;
+    transform: translateX(0);
+    transition: transform 800ms ease;
+}
+
+.albumImage.col-7{
+    transform: translateX(0);  
+}
+
+.albumImage.col-sm-5{
+    transform: translateX(-700);  
+}
+
+.tracks{
+    transform: translateX(0);
+    transition: transform 800ms ease;
+}
+
+.tracks.no-column{
+    transform: translateX(100px); 
+}
+
+.tracks.col-sm-3{
+    transform: translateX(0);  
 }
 
 .fa-caret-right, .fa-caret-left{
