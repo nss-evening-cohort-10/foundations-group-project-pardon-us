@@ -15,6 +15,41 @@ body {
     background-color: transparent;
     border: none;
     margin: 2em 1em 2em auto;
+    transform: translateX(0);
+    transition: transform 800ms ease;
+}
+
+.albumImage.col-7{
+    transform: translateX(10px);  
+}
+
+.albumImage.col-sm-5{
+    transform: translateX(-10);  
+}
+.caretIcon{
+    transform: rotateY(0);
+    transition: transform 800ms ease;
+}
+
+.caretIcon.fa-caret-right{
+    transform: rotateY(0);
+}
+
+.caretIcon.fa-caret-left{
+    transform: rotateY(360deg);
+}
+
+.tracks{
+    transform: translateX(0);
+    transition: transform 800ms ease;
+}
+
+.tracks.no-column{
+    transform: translateX(150px); 
+}
+
+.tracks.col-sm-3{
+    transform: translateX(0);  
 }
 
 .fa-caret-right, .fa-caret-left{
@@ -47,7 +82,8 @@ body {
     border-radius: 5px;
     font-family: 'Quicksand', 'Open Sans', sans-serif;
     margin: 125px auto;
-    overflow: auto;
+    /* overflow: auto; */
+    padding: 20px;
 }
 
 /* Footer */
@@ -138,7 +174,6 @@ i {
 
 .title {
     text-shadow: 1px 1px #000;
-    
 }
 
 a,
@@ -146,21 +181,37 @@ button {
 	background-color: transparent;
 	border: none;
 	color: #491449;
+	opacity: 0.7;
 }
 
 a:hover,
 button:hover {
 	color: #0000FF;
+	opacity: 1.0;
 	text-decoration: underline;
 }
 
 button {
-	padding: 0;
+    padding: 0;
 }
 
 .homeImg {
 	text-align: center;
-}	
+}
+
+.tourCard {
+	background-color: #49144980;
+	color: #eac1c1;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px 0;
+	opacity: 0.7;
+}
+
+.time {
+	display: flex;
+	justify-content: flex-end;
+}
 
 
 /* ABOUT PAGE */
@@ -173,3 +224,66 @@ button {
 	font-size: 26px;
 }
 
+#artistDiv{
+    /* width: 100%;
+    height: 100vh; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    /* flex-basis: auto; */
+    /* flex-flow: row wrap; */
+    padding: 50px 0px;
+  
+}
+
+.card-container{
+    width: 300px;
+    height: 300px; 
+    margin: 20px; 
+    transform-style: preserve-3d;
+}
+
+.artistCard{
+  width: 300px;
+  height: 300px;
+transition: transform 1s ease-in-out;
+/* transform-style: flat; */
+}
+
+.artistCard:hover {
+    transform:rotateY(180deg); 
+}
+
+.artistCard figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0px;
+
+    /* flex-direction: column; */
+}
+.front img{
+    width: 300px;
+    height: 300px;   
+}
+
+.back{
+    background-color: #EAC1C1;
+    color: #000;
+    transform:rotateY(180deg); 
+    text-align: center;
+}
+
+.links:hover{
+/* background-color: #491449; */
+color: #fff;
+}
+
+#valid{
+    background-color:#491449;
+    color: #EAC1C1;
+}
+.modal-title{
+    text-align: center;
+}
