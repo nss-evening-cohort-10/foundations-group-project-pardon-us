@@ -15,6 +15,41 @@ body {
     background-color: transparent;
     border: none;
     margin: 2em 1em 2em auto;
+    transform: translateX(0);
+    transition: transform 800ms ease;
+}
+
+.albumImage.col-7{
+    transform: translateX(10px);  
+}
+
+.albumImage.col-sm-5{
+    transform: translateX(-10);  
+}
+.caretIcon{
+    transform: rotateY(0);
+    transition: transform 800ms ease;
+}
+
+.caretIcon.fa-caret-right{
+    transform: rotateY(0);
+}
+
+.caretIcon.fa-caret-left{
+    transform: rotateY(360deg);
+}
+
+.tracks{
+    transform: translateX(0);
+    transition: transform 800ms ease;
+}
+
+.tracks.no-column{
+    transform: translateX(150px); 
+}
+
+.tracks.col-sm-3{
+    transform: translateX(0);  
 }
 
 .fa-caret-right, .fa-caret-left{
