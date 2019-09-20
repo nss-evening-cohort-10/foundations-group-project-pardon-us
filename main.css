@@ -88,6 +88,7 @@ i {
 }
 
 
+
 /* merch page */
 #vertical-nav  {
     display: flex;
@@ -109,8 +110,9 @@ i {
     width: 30%;
     /* margin: 5px; */
     margin-bottom: 20px;
-    color: black;
+    color: #49144970;
     text-align: center;
+    text-shadow: 1px 1px #000;
     border: transparent;
     align-items: center;
   }
@@ -119,13 +121,13 @@ i {
     height: 275px;
     width: 275px;
     border-radius: 999em;
-	border: 10px solid #49144990;
+	border: 8px solid #49144990;
     box-shadow: 5px 5px 5px #49144940;
   }
 
   .card.merch h3 {
       font-size: 25px;
-    }
+}
 
 #merchandise {
     padding: 0;
@@ -134,6 +136,10 @@ i {
     flex-flow: wrap;
   }
 
+.title {
+    text-shadow: 1px 1px #000;
+    
+}
 
 a,
 button {
