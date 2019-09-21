@@ -357,15 +357,17 @@ const printToDom = (divId, textToPrint) => {
     }
 
     const datesClick = (e) => {
-        const buttonID = e.target.id;
+        const buttonID = e.target.classList.value;
         const displayDates = document.getElementById('tourDates');
-        if (buttonID === 'upcomingDates' && displayDates.style.display === 'none') {
+        if (buttonID.includes('upcomingDates')  && displayDates.style.display === 'none') {
             displayDates.style.display = 'block'; 
             return; 
-        } else if (buttonID === 'upcomingDates' && displayDates.style.display === 'block') {
+        } else if (buttonID.includes('upcomingDates') && displayDates.style.display === 'block') {
             displayDates.style.display = 'none';
         }
     }
+
+    const dates = document.getElementsByClassName('upcomingDates')
 
  // Init - All Pages
     const init = () => {
@@ -382,7 +384,9 @@ const printToDom = (divId, textToPrint) => {
         } else {
             printDates(upcomingTourDates);
             document.getElementById('tourDates').style.display = 'none';
-            document.getElementById('upcomingDates').addEventListener('click', datesClick);
+            for(let i = 0; i < dates.length; i++){
+                dates[i].addEventListener('click', datesClick);
+            }
             // document.getElementById('upcomingTour').addEventListener('click', datesClick);	
         }		 
         
