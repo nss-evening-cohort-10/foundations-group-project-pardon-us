@@ -262,8 +262,7 @@ const printToDom = (divId, textToPrint) => {
             let trackString = '<ol>';
             for(let i = 0; i < trackArr.length; i++){
                 trackString += `
-                    <li>${trackArr[i]}<span rel="tracknum=${[i]}" itemprompt="tracks" itemscope itemtype="http://www.schema.org/MusicRecording"><a role="button" aria-label="Play Counting Backwards">
-                    </a></span></li>                
+                    <li>${trackArr[i]}</li>                
                 `
             };
             trackString += '</ol>';
