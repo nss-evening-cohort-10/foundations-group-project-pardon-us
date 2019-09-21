@@ -372,11 +372,11 @@ const printToDom = (divId, textToPrint) => {
     const datesClick = (e) => {
         const buttonID = e.target.id;
         const displayDates = document.getElementById('tourDates');
-        if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'hidden') {
-            displayDates.style.visibility = 'visible'; 
+        if (buttonID === 'upcomingDates' && displayDates.style.display === 'none') {
+            displayDates.style.display = 'block'; 
             return; 
-        } else if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'visible') {
-            displayDates.style.visibility = 'hidden';
+        } else if (buttonID === 'upcomingDates' && displayDates.style.display === 'block') {
+            displayDates.style.display = 'none';
         }
     }
 
@@ -396,7 +396,7 @@ const printToDom = (divId, textToPrint) => {
             printArtist(artistList);				 
         } else {
             printDates(upcomingTourDates);
-            document.getElementById('tourDates').style.visibility = 'hidden';
+            document.getElementById('tourDates').style.display = 'none';
             document.getElementById('upcomingDates').addEventListener('click', datesClick);
             // document.getElementById('upcomingTour').addEventListener('click', datesClick);	
         }		 
