@@ -2,12 +2,6 @@ const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
   };
-  
-  
-  
-  
-      
-  //Home Page
       
   
   //About Page
@@ -184,14 +178,7 @@ const printToDom = (divId, textToPrint) => {
             buildMerchandise("All");
         });
     }
-    
-  //   const init = () => {
-  //     // console.log(document.URL.indexOf("merch.html")!=-1);
-  //     if (document.URL.indexOf("merch.html") != -1) {
-  //       navBuilder();
-  //       eventListener();
-  //     }
-  //   };
+
       
   // Music Page
       const albumList = [
@@ -321,7 +308,7 @@ const printToDom = (divId, textToPrint) => {
         );
     };
 
- // Upcoming Tour Dates
+ // Home Page - Upcoming Tour Dates
     const upcomingTourDates = [
         {
             date: '20Oct2019',
@@ -379,8 +366,6 @@ const printToDom = (divId, textToPrint) => {
             displayDates.style.display = 'none';
         }
     }
-
-    
 
  // Init - All Pages
     const init = () => {

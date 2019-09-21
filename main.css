@@ -95,6 +95,15 @@ body {
 i {
       color:#000;
       margin: 10px;
+      padding-top: 15px;
+  }
+
+  .bandcamp-slim{
+    border: 2px double #EAC1C1;
+    border-radius: 5px;
+    height: 40px;
+    margin: 10px 1em 0 1em;
+    width: 250px;
   }
 
 
