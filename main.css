@@ -296,3 +296,24 @@ color: #fff;
 .modal-title{
     text-align: center;
 }
+
+/*Home Page*/
+.link-pic{
+    margin-bottom: 20px; 
+    /* width: auto; */
+    position: relative;
+}
+
+.link-text{
+    background-color: #ffffff40;
+    color: #491449;
+    display:inline-block;
+    font-size: 2em;
+    position: absolute;
+    top: 42%;
+    left: 41%;
+}
+
+.link-text.long{
+    left: 25%;
+}
