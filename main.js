@@ -262,7 +262,8 @@ const printToDom = (divId, textToPrint) => {
             let trackString = '<ol>';
             for(let i = 0; i < trackArr.length; i++){
                 trackString += `
-                    <li>${trackArr[i]}</li>                
+                    <li>${trackArr[i]}<span rel="tracknum=${[i]}" itemprompt="tracks" itemscope itemtype="http://www.schema.org/MusicRecording"><a role="button" aria-label="Play Counting Backwards">
+                    </a></span></li>                
                 `
             };
             trackString += '</ol>';
@@ -372,15 +373,13 @@ const printToDom = (divId, textToPrint) => {
     const datesClick = (e) => {
         const buttonID = e.target.id;
         const displayDates = document.getElementById('tourDates');
-        if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'hidden') {
-            displayDates.style.visibility = 'visible'; 
+        if (buttonID === 'upcomingDates' && displayDates.style.display === 'none') {
+            displayDates.style.display = 'block'; 
             return; 
-        } else if (buttonID === 'upcomingDates' && displayDates.style.visibility === 'visible') {
-            displayDates.style.visibility = 'hidden';
+        } else if (buttonID === 'upcomingDates' && displayDates.style.display === 'block') {
+            displayDates.style.display = 'none';
         }
     }
-
-    
 
  // Init - All Pages
     const init = () => {
@@ -396,7 +395,7 @@ const printToDom = (divId, textToPrint) => {
             printArtist(artistList);				 
         } else {
             printDates(upcomingTourDates);
-            document.getElementById('tourDates').style.visibility = 'hidden';
+            document.getElementById('tourDates').style.display = 'none';
             document.getElementById('upcomingDates').addEventListener('click', datesClick);
             // document.getElementById('upcomingTour').addEventListener('click', datesClick);	
         }		 
