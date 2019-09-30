@@ -95,15 +95,6 @@ body {
 i {
       color:#000;
       margin: 10px;
-      padding-top: 15px;
-  }
-
-  .bandcamp-slim{
-    border: 2px double #EAC1C1;
-    border-radius: 5px;
-    height: 40px;
-    margin: 10px 1em 0 1em;
-    width: 250px;
   }
 
 
@@ -295,25 +286,4 @@ color: #fff;
 }
 .modal-title{
     text-align: center;
-}
-
-/*Home Page*/
-.link-pic{
-    margin-bottom: 20px; 
-    /* width: auto; */
-    position: relative;
-}
-
-.link-text{
-    background-color: #ffffff40;
-    color: #491449;
-    display:inline-block;
-    font-size: 2em;
-    position: absolute;
-    top: 42%;
-    left: 41%;
-}
-
-.link-text.long{
-    left: 25%;
 }
