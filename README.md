@@ -4,7 +4,7 @@
 Use application to look at band website. Get to know them better, when their tour dates are, and purchase their merch
 
 ## Screenshots
-
+![pardon us home page preview](https://raw.githubusercontent.com/nss-evening-cohort-10/foundations-group-project-pardon-us/master/screenshots/image.PNG)
 
 ## How to run
 * Clone down this project
